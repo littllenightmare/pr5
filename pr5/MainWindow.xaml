@@ -23,15 +23,16 @@
         <TextBox x:Name="sptb" IsReadOnly="True" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Column="1"/>
         <Button x:Name="exbtn" Grid.Column="2" Content="Выход" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="115" Margin="0,119,0,0" Grid.Row="1" Click="exClick"/>
         <Button x:Name="infobtn" Grid.Column="2" Content="О программе" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="115" Grid.Row="1" Click="infoclick"/>
-        <Button x:Name="rasbtn" Grid.Column="2" Content="Рассчитать" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="115" Grid.Row="1"/>
+        <Button x:Name="rasbtn" Grid.Column="2" Content="Рассчитать" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="115" Grid.Row="1" Click="rasClick"/>
         <Label x:Name="mlabel" Content="Перемножение чисел пар" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="155" Grid.Row="2" Margin="0,10,0,0" Grid.RowSpan="2"/>
         <Label x:Name="slabel" Content="Вычитание пар" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="125" Grid.Row="2" Margin="0,10,0,0" Grid.Column="1"/>
         <TextBox x:Name="entertb" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Row="1"/>
-        <Button x:Name="enterbtn" Content="Ввести" HorizontalAlignment="Center" Height="25" VerticalAlignment="Bottom" Width="115" Grid.Row="1"/>
-        <Label x:Name="enterlabel" Content="Введите число" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="115" Grid.Row="1"/>
+        <Button x:Name="enterbtn" Content="Ввести" HorizontalAlignment="Center" Height="25" VerticalAlignment="Bottom" Width="115" Grid.Row="1" Click="enterClick"/>
+        <Label x:Name="enterlabel" Content="Введите числo, не равное 0" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="170" Grid.Row="1"/>
         <TextBox x:Name="mtb" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Row="2"/>
         <Label x:Name="tplabel" Content="Третья пара" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="115" Grid.Row="0" Grid.Column="2"/>
         <TextBox x:Name="tptb" IsReadOnly="True" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Column="2"/>
         <TextBox x:Name="stb" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Row="2" Grid.Column="1" Margin="71,0,0,0"/>
+        <Button x:Name="delbtn" Content="Очистить" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="115" Grid.Row="1" Click="delClick" Grid.Column="1"/>
     </Grid>
 </Window>

@@ -20,6 +20,7 @@ namespace pr5
     /// </summary>
     public partial class MainWindow : Window
     {
+        int first = 0; int second = 0; int third = 0; int a = 0; int b=0;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +34,72 @@ namespace pr5
         private void exClick(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public void enterClick(object sender, RoutedEventArgs e)
+        {  
+            
+            if (Int32.TryParse(entertb.Text, out int val) == true)
+            {
+                if (first == 0)
+                {
+                    if (a == 0)
+                    {
+                        a = Convert.ToInt32(entertb.Text);
+                    }
+                    else
+                    {
+                        b = Convert.ToInt32(entertb.Text);
+                        Pair firstpair = new Pair(a, b);
+                        first = 1;
+                        fptb.Text = Convert.ToString(firstpair.A) + " " + Convert.ToString(firstpair.B);
+                        a = 0; b = 0;
+                    }
+                }
+                else if (second == 0)
+                {
+                    if(a == 0)
+                    {
+                        a = Convert.ToInt32(entertb.Text);
+                    }
+                    else
+                    {
+                        b = Convert.ToInt32(entertb.Text);
+                        Pair secondpair = new Pair(a,b);
+                        second = 1;
+                        sptb.Text= Convert.ToString(secondpair.A) + " " + Convert.ToString (secondpair.B);
+                        a = 0; b = 0;
+                    }
+                }
+                else if(third == 0)
+                {
+                    if(a==0)
+                    {
+                        a = Convert.ToInt32(entertb.Text);
+                    }
+                    else
+                    {
+                        b = Convert.ToInt32(entertb.Text);
+                        Pair thirdpair = new Pair(a, b);
+                        third = 1;
+                        tptb.Text=Convert.ToString(thirdpair.A) + " " + Convert.ToString(thirdpair.B);
+                        a = 0; b = 0;
+                    }
+                }
+                entertb.Text = "";
+            }
+        }
+
+        private void delClick(object sender, RoutedEventArgs e)
+        {
+            fptb.Text = "";
+            sptb.Text = "";
+            tptb.Text = "";
+        }
+
+        private void rasClick(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
