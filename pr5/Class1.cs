@@ -12,7 +12,8 @@ namespace pr5
         /// <summary>
         /// Свойства (авто) А и Б
         /// </summary>
-        public int A { get; set; } public int B { get; set; }
+        public int A { get; set; } 
+        public int B { get; set; }
         /// <summary>
         /// Конструктор пар
         /// </summary>
@@ -50,11 +51,11 @@ namespace pr5
         /// </summary>
         /// <param name="next">вторая пара</param>
         /// <returns>строку с ответом</returns>
-        public string subtraction (Pair next)
+        public string subtraction(Pair next)
         {
             int a = A - next.A;
             int b = B - next.B;
-            string sub = $"{a},{b}";
+            string sub = $"{a} {b}";
             return sub;
         }
         /// <summary>
@@ -63,7 +64,7 @@ namespace pr5
         /// <param name="next">вторая пара</param>
         /// <param name="third">третья пара</param>
         /// <returns>строку с ответом</returns>
-        public string subtracion (Pair next, Pair third)
+        public string subtraction(Pair next, Pair third)
         {
             int a = A - next.A - third.A;
             int b = B - next.B - third.B;
