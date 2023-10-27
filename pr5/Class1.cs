@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Runtime.ExceptionServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,14 +14,14 @@ namespace pr5
         /// <summary>
         /// Свойства (авто) А и Б
         /// </summary>
-        public int A { get; set; } 
+        public int A { get; set; }
         public int B { get; set; }
         /// <summary>
         /// Конструктор пар
         /// </summary>
         /// <param name="a">первое число</param>
         /// <param name="b">второе число</param>
-        public Pair (int a, int b)
+        public Pair(int a, int b)
         {
             A = a; B = b;
         }
@@ -45,7 +46,7 @@ namespace pr5
         /// <param name="second">умноженное число второй пары</param>
         public void multiply(Pair next, out int first, out int second)
         {
-           first = A*B; second = next.A*next.B;
+            first = A * B; second = next.A * next.B;
         }
         /// <summary>
         /// Метод для вычитания 2 пар
@@ -97,13 +98,58 @@ namespace pr5
         /// <param name="one">первая пара</param>
         /// <param name="next">вторая пара</param>
         /// <returns>результат вычислений по формуле</returns>
-        public static string operator - (Pair one, Pair next)
+        public static string operator -(Pair one, Pair next)
         {
-            int a, b; 
-            a = one.A- next.A;
-            b = one.B- next.B;
-            Pair result = new Pair(a,b);
+            int a, b;
+            a = one.A - next.A;
+            b = one.B - next.B;
+            Pair result = new Pair(a, b);
             return $"{a},{b}";
         }
     }
+    class Rational : Pair
+    {
+
+        /// <summary>
+        /// Конструктор пар
+        /// </summary>
+        /// <param name="a">первое число пары</param>
+        /// <param name="b">второе число пары</param>
+        public Rational(int a, int b) : base(a, b)
+        {
+
+        }
+/// <summary>
+/// Метод суммирования пар
+/// </summary>
+/// <param name="next">первая пара</param>
+/// <param name="other">вторая пара</param>
+/// <returns>объект класса</returns>
+        public Rational summary(Rational next)
+        {
+            int a = A * next.B;
+            int b = B * next.A;
+            int sum = a + b;
+            Rational summa = new Rational(sum, B * next.B);
+            return summa;
+        }
+         /// <summary>
+         /// Метод деления пар
+         /// </summary>
+         /// <param name="next">первая паар</param>
+         /// <param name="other">вторая пара</param>
+         /// <returns>объект класса</returns>
+        public Rational division (Rational next)
+        { 
+            Rational sub = new Rational(A*next.B, next.B * next.A);
+            return sub;
+        }
+
+        public new Rational subtraction(Rational next)
+        {
+            Rational sub = new Rational(A * next.B - B * next.A, B * next.B);
+            return sub;
+        }
+    }
 }
+     
