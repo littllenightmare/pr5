@@ -154,17 +154,17 @@ namespace pr5
                 if (firstpair)
                 {
                     bool tru = true;
-                    if(tru == true)  MessageBox.Show("Пара равна");
+                    if(tru == true)  MessageBox.Show("Первая пара равна");
                 }
                 else MessageBox.Show("Первая пара не равна");
-                if (firstpair)
+                if (secondpair)
                 {
                     bool tru = true;
-                    if (tru == true) MessageBox.Show("Пара равна");
+                    if (tru == true) MessageBox.Show("Вторая пара равна");
                 }
                 else MessageBox.Show("Вторая пара не равна");
                 stb.Text = Convert.ToString((firstpair - secondpair));
             }
-            }
+        }
     }
 }

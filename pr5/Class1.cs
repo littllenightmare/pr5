@@ -97,13 +97,13 @@ namespace pr5
         /// <param name="one">первая пара</param>
         /// <param name="next">вторая пара</param>
         /// <returns>результат вычислений по формуле</returns>
-        public static Pair operator - (Pair one, Pair next)
+        public static string operator - (Pair one, Pair next)
         {
             int a, b; 
             a = one.A- next.A;
             b = one.B- next.B;
             Pair result = new Pair(a,b);
-            return result;
+            return $"{a},{b}";
         }
     }
 }
