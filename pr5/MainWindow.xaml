@@ -34,5 +34,6 @@
         <TextBox x:Name="tptb" IsReadOnly="True" HorizontalAlignment="Center" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Column="2"/>
         <TextBox IsReadOnly="True" x:Name="stb" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="115" Grid.Row="2" Grid.Column="1" Margin="71,0,0,0"/>
         <Button x:Name="delbtn" Content="Очистить" HorizontalAlignment="Center" Height="25" VerticalAlignment="Center" Width="115" Grid.Row="1" Click="delClick" Grid.Column="1"/>
+        <Button x:Name="secondpr" Content="Перегрузка операторов" HorizontalAlignment="Center" Height="25" VerticalAlignment="Top" Width="140" Grid.Row="1" Click="secondpr_Click" Grid.Column="1" Margin="0,12,0,0"/>
     </Grid>
 </Window>

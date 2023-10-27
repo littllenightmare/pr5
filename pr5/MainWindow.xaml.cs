@@ -134,5 +134,37 @@ namespace pr5
             }
 
         }
+
+        private void secondpr_Click(object sender, RoutedEventArgs e)
+        {
+            string userInput1 = fptb.Text;
+            string userInput2 = sptb.Text;
+            string[] firsty = userInput1.Split(' ');
+            string[] secondy = userInput2.Split(' ');
+            if (firsty.Length == 2 & secondy.Length == 2)//если в строковых массивах превой и второй пары по 2 значения, заполняем числа в строковые массивы, добавляем их в пару
+            {
+                int a, b, c, d;
+                a = Convert.ToInt32(firsty[0]);
+                b = Convert.ToInt32(firsty[1]);
+                c = Convert.ToInt32(secondy[0]);
+                d = Convert.ToInt32(secondy[1]);
+                Pair firstpair = new Pair(a, b);
+                Pair secondpair = new Pair(c, d);
+
+                if (firstpair)
+                {
+                    bool tru = true;
+                    if(tru == true)  MessageBox.Show("Пара равна");
+                }
+                else MessageBox.Show("Первая пара не равна");
+                if (firstpair)
+                {
+                    bool tru = true;
+                    if (tru == true) MessageBox.Show("Пара равна");
+                }
+                else MessageBox.Show("Вторая пара не равна");
+                stb.Text = Convert.ToString((firstpair - secondpair));
+            }
+            }
     }
 }

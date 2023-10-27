@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System.Text;
@@ -70,6 +71,39 @@ namespace pr5
             int b = B - next.B - third.B;
             string sub = $"{a},{b}";
             return sub;
+        }
+        /// <summary>
+        /// Перегруженный бинарный оператор тру
+        /// </summary>
+        /// <param name="one">пара</param>
+        /// <returns>тру, если числа в паре одинаковые; фолс, если числа разные</returns>
+        public static bool operator true(Pair one)
+        {
+            if (one.B == one.A) return true;
+            else return false;
+        }
+        /// <summary>
+        /// Перегруженный бинарный оператор фолс
+        /// </summary>
+        /// <param name="one">пара</param>
+        /// <returns>фолс, если числа в паре разные</returns>
+        public static bool operator false(Pair one)
+        {
+            return one.A == one.B;
+        }
+        /// <summary>
+        /// Перегруженный бинарный оператор вычитания
+        /// </summary>
+        /// <param name="one">первая пара</param>
+        /// <param name="next">вторая пара</param>
+        /// <returns>результат вычислений по формуле</returns>
+        public static Pair operator - (Pair one, Pair next)
+        {
+            int a, b; 
+            a = one.A- next.A;
+            b = one.B- next.B;
+            Pair result = new Pair(a,b);
+            return result;
         }
     }
 }
