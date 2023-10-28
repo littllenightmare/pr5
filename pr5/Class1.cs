@@ -141,11 +141,15 @@ namespace pr5
          /// <returns>объект класса</returns>
         public Rational division (Rational next)
         { 
-            Rational sub = new Rational(A*next.B, next.B * next.A);
+            Rational sub = new Rational(A*next.B, B * next.A);
             return sub;
         }
-
-        public new Rational subtraction(Rational next)
+        /// <summary>
+        /// Переопределённый метод вычитания
+        /// </summary>
+        /// <param name="next"></param>
+        /// <returns></returns>
+        public Rational subtraction(Rational next)
         {
             Rational sub = new Rational(A * next.B - B * next.A, B * next.B);
             return sub;

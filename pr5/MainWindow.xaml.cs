@@ -168,5 +168,71 @@ namespace pr5
                 stb.Text = Convert.ToString((firstpair - secondpair));
             }
         }
+
+        private void NewPr_Click(object sender, RoutedEventArgs e)
+        {
+                tplabel.Visibility = Visibility.Visible;
+                tptb.Visibility = Visibility.Visible;
+                secondpr.Visibility = Visibility.Visible;
+                rasbtn.Visibility = Visibility.Visible;
+                mlabel.Content = "Перемножение чисел пар";
+                OldPr.IsEnabled = true;
+                NewPr.IsEnabled = false;
+            secondrasbtn.Visibility = Visibility.Hidden;
+            rasbtn.Visibility = Visibility.Visible;
+            fptb.Text = "";
+            sptb.Text = "";
+            tptb.Text = "";
+            stb.Text = "";
+            mtb.Text = "";
+            first = 0; second = 0; third = 0;
+
+        }
+
+        private void secondrasClick(object sender, RoutedEventArgs e)
+        {
+            string userInput1 = fptb.Text;
+            string userInput2 = sptb.Text;
+            string[] firsty = userInput1.Split(' ');
+            string[] secondy = userInput2.Split(' ');
+            if (firsty.Length == 2 & secondy.Length == 2)//если в строковых массивах превой и второй пары по 2 значения, заполняем числа в строковые массивы, добавляем их в пару
+            {
+                int a, b, c, d;
+                a = Convert.ToInt32(firsty[0]);
+                b = Convert.ToInt32(firsty[1]);
+                c = Convert.ToInt32(secondy[0]);
+                d = Convert.ToInt32(secondy[1]);
+                Rational firstpair = new Rational(a, b);
+                Rational secondpair = new Rational(c, d);
+
+                Rational thirdpair = new Rational(firstpair.summary(secondpair).A, firstpair.summary(secondpair).B);
+                mtb.Text= $"{thirdpair.A} {thirdpair.B}";
+
+                thirdpair = new(firstpair.subtraction(secondpair).A, firstpair.subtraction(secondpair).B);
+                stb.Text = $"{thirdpair.A} {thirdpair.B}";                
+                
+                thirdpair = new (firstpair.division(secondpair).A, firstpair.division(secondpair).B);
+                MessageBox.Show($"Деление чисел: {Convert.ToString(thirdpair.A)} {Convert.ToString(thirdpair.B)}");
+            }
+        }
+
+        private void OldPr_Click(object sender, RoutedEventArgs e)
+        {
+            tplabel.Visibility = Visibility.Hidden;
+            tptb.Visibility = Visibility.Hidden;
+            secondpr.Visibility = Visibility.Hidden;
+            rasbtn.Visibility = Visibility.Hidden;
+            NewPr.IsEnabled = true;
+            OldPr.IsEnabled = false;
+            secondrasbtn.Visibility = Visibility.Visible;
+            rasbtn.Visibility = Visibility.Hidden;
+            mlabel.Content = "Сложение чисел пар";
+            fptb.Text = "";
+            sptb.Text = "";
+            tptb.Text = "";
+            stb.Text = "";
+            mtb.Text = "";
+            first = 0; second = 0; third = 0;
+        }
     }
 }
