@@ -119,12 +119,11 @@ namespace pr5
         {
 
         }
-/// <summary>
-/// Метод суммирования пар
-/// </summary>
-/// <param name="next">первая пара</param>
-/// <param name="other">вторая пара</param>
-/// <returns>объект класса</returns>
+        /// <summary>
+        /// Метод суммирования пар
+        /// </summary>
+        /// <param name="next">вторая пара</param>
+        /// <returns>пару, являющуюся суммой</returns>
         public Rational summary(Rational next)
         {
             int a = A * next.B;
@@ -133,22 +132,21 @@ namespace pr5
             Rational summa = new Rational(sum, B * next.B);
             return summa;
         }
-         /// <summary>
-         /// Метод деления пар
-         /// </summary>
-         /// <param name="next">первая паар</param>
-         /// <param name="other">вторая пара</param>
-         /// <returns>объект класса</returns>
+        /// <summary>
+        /// Метод деления пар
+        /// </summary>
+        /// <param name="next">вторая пара</param>
+        /// <returns>пару, являющуюся результатом деления</returns>
         public Rational division (Rational next)
         { 
             Rational sub = new Rational(A*next.B, B * next.A);
             return sub;
         }
-        /// <summary>
-        /// Переопределённый метод вычитания
-        /// </summary>
-        /// <param name="next"></param>
-        /// <returns></returns>
+  /// <summary>
+  /// Метод вычитания пар
+  /// </summary>
+  /// <param name="next">вторая пара</param>
+  /// <returns>пару, являющуюся результатом вычитания</returns>
         public Rational subtraction(Rational next)
         {
             Rational sub = new Rational(A * next.B - B * next.A, B * next.B);
